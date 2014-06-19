@@ -6,10 +6,13 @@
 ## This solution is by Andreas Krueger 
 ## 
  
-## Put comments here that give an overall description of what your
-## functions do
+## A matrix inversion is calculated, and then cached.  
+## To save computation time, a repeated call of cacheSolve 
+## does not recalculate - but returns the previous result. 
 
-## Write a short comment describing this function
+
+## makeCacheMatrix contains a list of functions to store
+## the matrix, ...
 
 makeCacheMatrix <- function(x = matrix()) {
 
