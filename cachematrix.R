@@ -3,7 +3,7 @@
 ##  Johns Hopkins - R Programming
 ##  by Roger D. Peng, PhD, Jeff Leek, PhD, Brian Caffo, PhD
 ##
-## this solution is by Andreas Krueger
+## This solution is by Andreas Krueger 
 ## 
  
 ## Put comments here that give an overall description of what your
