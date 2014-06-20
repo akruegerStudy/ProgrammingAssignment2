@@ -3,7 +3,7 @@
 ##  R Programming - Johns Hopkins
 ##  by Roger D. Peng, PhD, Jeff Leek, PhD, Brian Caffo, PhD
 ##
-## This solution is by Andreas Krueger 20/6/2014
+## This solution is by Andreas Krueger 20/6/2014 - probably ready.
 ## 
 ## Goal:
 ## A matrix inversion is calculated, and then cached.  
