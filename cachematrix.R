@@ -1,16 +1,16 @@
-
 ## Programming Assignment 2
 ##  R Programming - Johns Hopkins
 ##  by Roger D. Peng, PhD, Jeff Leek, PhD, Brian Caffo, PhD
 ##
-## This solution is by Andreas Krueger 20/6/2014 - probably ready.
+## This solution is by Andreas Krueger 21/6/2014 - ready.
 ## 
 ## Goal:
 ## A matrix inversion is calculated, and then cached.  
 ## To save computation time, a repeated call of cacheSolve 
 ## does not recalculate - but returns the previous result. 
 ## 
-## N.B.: Contains the answer, plus 2 functions to test it, at the bottom.
+## N.B.: Contains the answer, 
+## plus 2 functions to test it, at the bottom.
 ##
 
 
@@ -29,7 +29,7 @@ makeCacheMatrix <- function(x = matrix()) {
         setinverse <- function(i) inverse <<- i    # caches inverse 
         getinverse <- function() inverse           # returns inverse
         
-        list(set = set, get = get,                 # special object 4 functions
+        list(set = set, get = get,                 # special object = 4 functions
              setinverse = setinverse,
              getinverse = getinverse)
 }
@@ -63,7 +63,7 @@ cacheSolve <- function(x, ...) {
 ####### You can ignore the following in your evaluation  ##########
 
 
-myTest1 <- function (r=3){
+myTest1 <- function ( r=3 ){
         ## generates a square matrix with r rows,
         ## asks for the inverse, 
         ## and then for the inverse again
@@ -72,7 +72,7 @@ myTest1 <- function (r=3){
         CM  <- makeCacheMatrix(  matrix (rnorm(r^2),r,r)  )
         
         # tests the result by multiplying the matrix with its inverse:
-        multiplyPrint <- function (M1, M2) print (round ( M1 %*% M2 , 1)) 
+        multiplyPrint <- function (M1, M2) print (round ( M1 %*% M2 , 2)) 
         
         Mi <- cacheSolve(CM)           # 1st call
         multiplyPrint( CM$get(), Mi )
@@ -82,10 +82,10 @@ myTest1 <- function (r=3){
 }
 
 myTest2 <- function (size = 1000){
-        ## generates a HUGE matrix, asks for the inverse 
-        ## and then for the inverse again. Timing measured.
+        ## generates a HUGE matrix, asks for the inverse, 
+        ## then asks for the inverse again. Timing measured.
         
-        # "special matrix object" from random matrix (=probably invertible):
+        # "special matrix object" from random matrix (= probably invertible):
         CM  <- makeCacheMatrix(  matrix (rnorm(size^2),size,size)  )
         
         print(system.time(    Mi <- cacheSolve(CM)       ))    # 1st call
